@@ -1,22 +1,23 @@
-@import ../utilities/_variables
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap')
+
+$font-primary: 'Noto Sans TC', sans-serif
+$font-secondary: 'Roboto', sans-serif
 
 body
-    font-family: $noto
+    font-family: $font-primary
     line-height: 1.5
-       
-.title
+
+h2
     font-size: 48px
-    color: #650300
     font-weight: bold
+    color: #650300
     text-align: center
 
-.title-light
-    color: #FFFFFF
-
 @media ( max-width: 768px )
-    .title
+    h2
         font-size: 32px
 
-@media ( max-width: 768px )
-    .title
+@media ( max-width: 375px )
+    h2
         font-size: 24px

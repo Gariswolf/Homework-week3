@@ -3,12 +3,6 @@
  * License: none (public domain) */
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap");
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -59,6 +53,7 @@ a {
 
 img {
   display: block;
+  margin: 0 auto;
 }
 
 *, *::before, *::after {
@@ -71,25 +66,21 @@ body {
   line-height: 1.5;
 }
 
-.title {
+h2 {
   font-size: 48px;
-  color: #650300;
   font-weight: bold;
+  color: #650300;
   text-align: center;
 }
 
-.title-light {
-  color: #FFFFFF;
-}
-
 @media (max-width: 768px) {
-  .title {
+  h2 {
     font-size: 32px;
   }
 }
 
-@media (max-width: 768px) {
-  .title {
+@media (max-width: 375px) {
+  h2 {
     font-size: 24px;
   }
 }
@@ -104,8 +95,8 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #AA0601;
   padding: 30px 88px;
+  background: #AA0601;
   font-size: 20px;
   color: #FFFFFF;
   text-align: center;
@@ -123,7 +114,7 @@ header {
 
 @media (max-width: 768px) {
   header {
-    padding: 30px 39px;
+    padding: 30px;
   }
   .menu-item {
     margin-left: 40px;
@@ -132,12 +123,11 @@ header {
 
 @media (max-width: 375px) {
   header {
-    padding: 0;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    display: block;
+    padding: 10px 0 0 0;
   }
-  .logo {
-    margin: 10px auto;
+  header img {
+    margin-bottom: 10px;
   }
   .menu {
     width: 100%;
@@ -145,8 +135,8 @@ header {
         flex-wrap: wrap;
   }
   .menu-item {
-    margin: 0;
     width: 50%;
+    margin: 0;
     border: 1px solid #FFFFFF;
   }
   .menu-item a {
@@ -157,7 +147,6 @@ header {
 .banner {
   height: calc( 100vh - 108px);
   background: url(../image/banner.png) center;
-  background-size: cover;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -167,11 +156,17 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-right: 396px;
-  font-size: 36px;
   font-weight: bold;
-  color: #AA0601;
-  text-align-last: right;
+  color: #650300;
+  text-align: right;
+}
+
+.quote {
+  margin-right: 396px;
+}
+
+.quote-sub {
+  font-size: 36px;
 }
 
 .quote-main {
@@ -180,28 +175,124 @@ header {
 }
 
 @media (max-width: 768px) {
-  .banner {
-    background: url(../image/banner-sm.png) center;
-    font-size: 20px;
-    padding-right: 39px;
+  .quote {
+    margin-right: 39px;
   }
-  .quote-main {
-    padding-right: 0;
+  -sub {
+    font-size: 20px;
+  }
+  -main {
     font-size: 48px;
+    padding-right: 0;
   }
 }
 
 @media (max-width: 375px) {
   .banner {
-    font-size: 16px;
-    padding-right: 15px;
+    background: url(../image/banner-sm.png);
+  }
+  .quote {
+    margin-right: 15px;
   }
   .quote-sub {
-    line-height: 30px;
+    font-size: 16px;
   }
   .quote-main {
     font-size: 32px;
-    line-height: 72px;
+  }
+}
+
+.about {
+  padding: 64px 0 80px 0;
+  background: #FBF2F2;
+}
+
+.about .container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.about-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 60px;
+  font-weight: bold;
+}
+
+.about .card {
+  max-width: 208px;
+}
+
+.about .card-img {
+  width: 100px;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto 40px auto;
+}
+
+.about .card-img img {
+  width: 100%;
+}
+
+.about .card-title {
+  margin-bottom: 4px;
+  font-size: 24px;
+  color: #650300;
+  text-align: center;
+}
+
+.about .card-info {
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 40px 0 80px 0;
+  }
+  .about .container {
+    max-width: 600px;
+  }
+  .about-list {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin-top: 32px;
+  }
+  .about .card {
+    max-width: 237px;
+    margin-bottom: 40px;
+  }
+  .about .card-img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 16px;
+  }
+  .about .card-title {
+    font-size: 20px;
+  }
+  .about .card-info {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 375px) {
+  .about {
+    padding: 32px 0 52px 0;
+  }
+  .about .container {
+    max-width: 237px;
+  }
+  .about-list {
+    display: block;
+    margin-top: 20px;
   }
 }
 /*# sourceMappingURL=main.css.map */
