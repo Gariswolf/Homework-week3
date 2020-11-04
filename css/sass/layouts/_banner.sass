@@ -1,0 +1,41 @@
+@import ../utilities/_variables
+
+
+.banner
+    height: calc( 100vh - 108px )
+    background: url(../image/banner.png) center
+    background-size: cover
+    display: flex
+    justify-content: flex-end
+    align-items: center
+    padding-right: 396px
+    font-size: 36px
+    font-weight: bold
+    color: $color-primary
+    text-align-last: right
+    
+.quote-main
+    font-size: 64px
+    padding-right: 9px
+
+
+@media ( max-width: 768px )
+    .banner
+        background: url(../image/banner-sm.png) center
+        font-size: 20px
+        padding-right: 39px
+        
+    .quote-main
+        padding-right: 0
+        font-size: 48px
+
+@media ( max-width: 375px )
+    .banner
+        font-size: 16px
+        padding-right: 15px
+
+    .quote-sub
+        line-height: 30px
+    .quote-main
+        font-size: 32px
+        line-height: 72px

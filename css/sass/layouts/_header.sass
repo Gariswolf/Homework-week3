@@ -1,0 +1,43 @@
+@import ../utilities/_variables
+
+header
+    display: flex
+    justify-content: space-between
+    align-items: center
+    background: #AA0601
+    padding: 30px 88px
+    font-size: 20px
+    color: $color-light
+    text-align: center
+
+.menu
+    display: flex
+    
+.menu-item
+    margin-left: 64px
+
+@media ( max-width: 768px )
+    header
+        padding: 30px 39px
+
+    .menu-item
+        margin-left: 40px
+
+@media ( max-width: 375px )
+    header
+        padding: 0
+        flex-wrap: wrap
+
+    .logo
+        margin: 10px auto
+    
+    .menu
+        width: 100%
+        flex-wrap: wrap
+
+    .menu-item
+        margin: 0
+        width: 50%
+        border: 1px solid #FFFFFF
+        a
+            padding: 8px 0
