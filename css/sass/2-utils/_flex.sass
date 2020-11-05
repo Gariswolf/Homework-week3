@@ -1,0 +1,25 @@
+@import ../1-basics/_mixin
+@import ../1-basics/_variables
+
+@each $device, $breakpoint in $device-breakpoint
+    @include rwd($breakpoint)
+        .d-flex-#{$device}
+            display: flex
+
+    @each $justify-key, $justify-value in $justify-content
+        @include rwd($breakpoint)
+            .flex-#{$justify-key}-#{$device}
+                justify-content: $justify-value
+
+    @each $align-key, $align-value in $align-items
+        @include rwd($breakpoint)
+            .flex-#{$align-key}-#{$device}
+                align-items: $align-value  
+
+    @each $wrap-key, $wrap-value in $flex-wrap
+        @include rwd($breakpoint)
+            .flex-wrap-#{$wrap-key}-#{$device}
+                flex-wrap: $wrap-value 
+
+.flex-dir-rr-phone
+    flex-direction: row-reverse
