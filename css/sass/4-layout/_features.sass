@@ -1,0 +1,60 @@
+.features
+    padding: 64px 0 80px 0
+    &__list
+        margin-top: 60px
+    &__item
+        margin-bottom: 32px
+        &--img
+            width: 635px
+        &--body
+            margin: 0 30px
+            font-size: 48px
+            font-weight: bold
+            font-style: italic
+            color: $color-primary
+        &--icon
+            margin-right: 8px
+            &-white
+                display: none
+            
+@media ( max-width: 768px )
+    .features
+        padding: 40px 0
+        &__container
+            max-width: 690px
+        &__title
+            font-size: 32px
+        &__list
+            margin-top: 32px
+        &__item
+            margin-bottom: 8px
+            &--img
+                max-width: 390px
+            &--body
+                font-size: 28px
+            &--icon
+                height: 32px
+
+@media ( max-width: 375px )
+    .features
+        padding: 32px 0
+        &__container
+            max-width: 345px
+        &__title
+            font-size: 20px
+        &__list
+            margin-top: 20px
+        &__item
+            position: relative
+            &--img
+                width: 345px
+            &--body
+                position: absolute
+                
+                color: $color-white
+            &--icon
+                display: none
+                &-white
+                    display: block
+                    margin-right: 8px
+
