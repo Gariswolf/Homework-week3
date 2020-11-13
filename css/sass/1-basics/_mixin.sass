@@ -1,4 +1,7 @@
 @mixin rwd($breakpoint)
-    @media ( max-width: $breakpoint )
+    @media ( max-width:  $breakpoint * 1px  )
         @content
-    
+        
+@mixin container-space-calculator($container-width, $breakpoint)
+    @include rwd($breakpoint)
+        max-width: $container-width * 1px 

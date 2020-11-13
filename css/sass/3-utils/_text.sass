@@ -1,0 +1,10 @@
+@for $font-size-level from $min-font-size-level to $max-font-size-level
+    .fz-#{$font-size-level}
+        font-size: $font-size-unit * $font-size-level
+    
+@each $key, $value in $font-weight-map
+    .text-#{$key}
+        font-weight: $value
+
+.text-light
+    color: $color-white

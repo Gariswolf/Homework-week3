@@ -1,0 +1,52 @@
+@each $direction-key, $direction-value in $space-direction-map
+    @for $spacer-level from $min-spacer-level to $max-spacer-level
+        @if $direction-key == x
+            .mx-#{$spacer-level}
+                margin-right: $spacer * $spacer-level
+                margin-left: $spacer * $spacer-level
+        @else if $direction-key == y
+            .my-#{$spacer-level}
+                margin-top: $spacer * $spacer-level
+                margin-bottom: $spacer * $spacer-level
+        @else 
+            .m#{$direction-key}-#{$spacer-level}
+                margin-#{$direction-value}: $spacer * $spacer-level
+
+    @if $direction-key == x
+        .mx-auto
+            margin-right: auto
+            margin-left: auto
+    @else if $direction-key == y
+        .my-auto
+            margin-top: auto
+            margin-bottom: auto
+    @else 
+        .m#{$direction-key}-auto
+            margin-#{$direction-value}: auto
+
+
+@each $direction-key, $direction-value in $space-direction-map
+    @for $spacer-level from $min-spacer-level to $max-spacer-level
+        @if $direction-key == x
+            .px-#{$spacer-level}
+                padding-right: $spacer * $spacer-level
+                padding-left: $spacer * $spacer-level
+        @else if $direction-key == y
+            .py-#{$spacer-level}
+                padding-top: $spacer * $spacer-level
+                padding-bottom: $spacer * $spacer-level
+        @else 
+            .p#{$direction-key}-#{$spacer-level}
+                padding-#{$direction-value}: $spacer * $spacer-level
+
+    @if $direction-key == x
+        .px-auto
+            padding-right: auto
+            padding-left: auto
+    @else if $direction-key == y
+        .py-auto
+            padding-top: auto
+            padding-bottom: auto
+    @else 
+        .p#{$direction-key}-auto
+            padding-#{$direction-value}: auto

@@ -1,0 +1,20 @@
+
+@each $key, $value in $display-map
+    .d-#{$key}
+        display: $value
+
+@each $key, $value in $justify-map
+    .#{$key}
+        justify-content: $value
+
+@each $key, $value in $align-map
+    .#{$key}
+        align-items: $value
+
+@each $key, $value in $wrap-map
+    .flex-#{$key}
+        flex-wrap: $value
+
+@each $key, $value in $direction-map
+    .flex-#{$key}
+        flex-direction: $value
