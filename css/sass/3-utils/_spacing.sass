@@ -1,5 +1,8 @@
+
 @each $direction-key, $direction-value in $space-direction-map
     @for $spacer-level from $min-spacer-level to $max-spacer-level
+        .m-#{$spacer-level}
+            margin: $spacer * $spacer-level
         @if $direction-key == x
             .mx-#{$spacer-level}
                 margin-right: $spacer * $spacer-level
@@ -25,8 +28,11 @@
             margin-#{$direction-value}: auto
 
 
+
 @each $direction-key, $direction-value in $space-direction-map
     @for $spacer-level from $min-spacer-level to $max-spacer-level
+        .p-#{$spacer-level}
+            padding: $spacer * $spacer-level
         @if $direction-key == x
             .px-#{$spacer-level}
                 padding-right: $spacer * $spacer-level
@@ -50,3 +56,67 @@
     @else 
         .p#{$direction-key}-auto
             padding-#{$direction-value}: auto
+
+
+
+
+// RWD Margin and Padding
+@each $device-key, $device-width in $device-map
+    @include rwd($device-width)
+        @each $direction-key, $direction-value in $space-direction-map
+            @for $spacer-level from $min-spacer-level to $max-spacer-level
+                .m-#{$spacer-level}-#{$device-key}
+                    margin: $spacer * $spacer-level
+                @if $direction-key == x
+                    .mx-#{$spacer-level}-#{$device-key}
+                        margin-right: $spacer * $spacer-level
+                        margin-left: $spacer * $spacer-level
+                @else if $direction-key == y
+                    .my-#{$spacer-level}-#{$device-key}
+                        margin-top: $spacer * $spacer-level
+                        margin-bottom: $spacer * $spacer-level
+                @else 
+                    .m#{$direction-key}-#{$spacer-level}-#{$device-key}
+                        margin-#{$direction-value}: $spacer * $spacer-level
+
+            @if $direction-key == x
+                .mx-auto-#{$device-key}
+                    margin-right: auto
+                    margin-left: auto
+            @else if $direction-key == y
+                .my-auto-#{$device-key}
+                    margin-top: auto
+                    margin-bottom: auto
+            @else 
+                .m#{$direction-key}-auto-#{$device-key}
+                    margin-#{$direction-value}: auto
+
+
+        @each $direction-key, $direction-value in $space-direction-map
+            @for $spacer-level from $min-spacer-level to $max-spacer-level
+                .p-#{$spacer-level}-#{$device-key}
+                    padding: $spacer * $spacer-level
+                @if $direction-key == x
+                    .px-#{$spacer-level}-#{$device-key}
+                        padding-right: $spacer * $spacer-level
+                        padding-left: $spacer * $spacer-level
+                @else if $direction-key == y
+                    .py-#{$spacer-level}-#{$device-key}
+                        padding-top: $spacer * $spacer-level
+                        padding-bottom: $spacer * $spacer-level
+                @else 
+                    .p#{$direction-key}-#{$spacer-level}-#{$device-key}
+                        padding-#{$direction-value}: $spacer * $spacer-level
+
+            @if $direction-key == x
+                .px-auto-#{$device-key}
+                    padding-right: auto
+                    padding-left: auto
+            @else if $direction-key == y
+                .py-auto-#{$device-key}
+                    padding-top: auto
+                    padding-bottom: auto
+            @else 
+                .p#{$direction-key}-auto-#{$device-key}
+                    padding-#{$direction-value}: auto
+

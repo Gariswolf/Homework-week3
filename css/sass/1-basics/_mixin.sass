@@ -1,7 +1,19 @@
 @mixin rwd($breakpoint)
     @media ( max-width:  $breakpoint * 1px  )
         @content
-        
+
+@mixin rwd-lg
+    @media ( max-width: 992px )
+        @content       
+
+@mixin rwd-md
+    @media ( max-width: 768px )
+        @content
+
+@mixin rwd-sm
+    @media ( max-width: 375px )
+        @content
+
 @mixin container-space-calculator($container-width, $breakpoint)
     @include rwd($breakpoint)
         max-width: $container-width * 1px 

@@ -1,10 +1,30 @@
-@for $font-size-level from $min-font-size-level to $max-font-size-level
+@for $font-size-level from $min-font-size-level to $max-font-size-level +1
     .fz-#{$font-size-level}
         font-size: $font-size-unit * $font-size-level
-    
+
+@each $device-key, $device-width in $device-map
+    @for $font-size-level from $min-font-size-level to $max-font-size-level +1
+        .fz-#{$font-size-level}-#{$device-key}
+            @include rwd($device-width)
+                font-size: $font-size-unit * $font-size-level
+
 @each $key, $value in $font-weight-map
     .text-#{$key}
         font-weight: $value
 
-.text-light
-    color: $color-white
+.text
+    &-italic
+        font-style: italic
+
+    &-right
+        text-align: right
+    &-center
+        text-align: center
+
+    &-en
+        font-family: 'Roboto', sans-serif
+
+    &-dark
+        color: $color-black
+    &-light
+        color: $color-white

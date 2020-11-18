@@ -1,20 +1,51 @@
-
 @each $key, $value in $display-map
     .d-#{$key}
         display: $value
 
 @each $key, $value in $justify-map
-    .#{$key}
+    .flex-#{$key}
         justify-content: $value
 
 @each $key, $value in $align-map
-    .#{$key}
+    .flex-#{$key}
         align-items: $value
 
 @each $key, $value in $wrap-map
     .flex-#{$key}
         flex-wrap: $value
 
-@each $key, $value in $direction-map
+@each $key, $value in $flex-direction-map
     .flex-#{$key}
         flex-direction: $value
+
+.flex-center
+    display: flex
+    justify-content: center
+    align-items: center
+    
+@each $device-key, $device-width in $device-map
+    @each $key, $value in $display-map
+        .d-#{$key}-#{$device-key}
+            @include rwd($device-width)
+                display: $value
+
+    @each $key, $value in $justify-map
+        .#{$key}-#{$device-key}
+            @include rwd($device-width)
+                justify-content: $value
+
+    @each $key, $value in $align-map
+        .#{$key}-#{$device-key}
+            @include rwd($device-width)
+                align-items: $value
+
+    @each $key, $value in $wrap-map
+        .flex-#{$key}-#{$device-key}
+            @include rwd($device-width)
+                flex-wrap: $value
+
+    @each $key, $value in $flex-direction-map
+        .flex-#{$key}-#{$device-key}
+            @include rwd($device-width)
+                flex-direction: $value
+
