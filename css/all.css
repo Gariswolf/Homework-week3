@@ -257,6 +257,18 @@ button {
           align-items: center;
 }
 
+.flex-center-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 @media (max-width: 992px) {
   .d-flex-lg {
     display: -webkit-box;
@@ -564,6 +576,10 @@ button {
         -ms-flex-direction: row-reverse;
             flex-direction: row-reverse;
   }
+}
+
+.w-full {
+  width: 100%;
 }
 
 .m-0 {
@@ -9643,7 +9659,15 @@ button {
   color: #fff;
 }
 
-@media (max-width: 600px) {
+.text-primary {
+  color: #AA0601;
+}
+
+.text-secondary {
+  color: #650300;
+}
+
+@media (max-width: 610px) {
   .nav {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
@@ -9663,7 +9687,7 @@ button {
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 465px) {
   .nav__menu {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
@@ -9671,6 +9695,113 @@ button {
   .nav__item {
     width: 50%;
     border: 1px solid #fff;
+  }
+}
+
+.footer__item--tel::before, .footer__item--mail::before {
+  content: '';
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+  position: relative;
+  top: 12px;
+  left: 0;
+  margin-right: 18px;
+  background: center/contain no-repeat;
+}
+
+.footer__item--tel::before {
+  background-image: url(../image/icon/icon-phone.svg);
+}
+
+.footer__item--mail::before {
+  background-image: url(../image/icon/icon-mail.svg);
+}
+
+@media (max-width: 768px) {
+  .footer__logo {
+    display: none;
+  }
+  .footer__item--tel::before, .footer__item--mail::before {
+    width: 24px;
+    height: 24px;
+    top: 6px;
+    margin-right: 8px;
+  }
+}
+
+@media (max-width: 700px) {
+  .footer__menu--policy {
+    display: block;
+  }
+  .footer__item--copyright {
+    margin-left: 0;
+    width: 100%;
+  }
+  .footer__item--policy {
+    margin-left: 0;
+    text-align: left;
+  }
+}
+
+@media (max-width: 650px) {
+  .footer__nav {
+    float: right;
+    margin-top: 4px;
+    margin-bottom: 0;
+  }
+  .footer__menu--page {
+    display: none;
+  }
+}
+
+@media (max-width: 375px) {
+  .footer .fz-7-sm {
+    position: relative;
+  }
+  .footer__logo {
+    width: 48px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+@media (max-width: 320px) {
+  .footer__nav {
+    float: initial;
+    margin-bottom: 8px;
+  }
+}
+
+.banner {
+  height: calc( 100vh - 105px);
+  background-image: url(../image/banner.png);
+}
+
+.banner .fz-18 {
+  margin-right: -9px;
+}
+
+@media (max-width: 768px) {
+  .banner {
+    background-image: url(../image/banner-sm.png);
+  }
+  .banner .fz-18 {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 610px) {
+  .banner {
+    height: calc( 100vh - 119px);
+  }
+}
+
+@media (max-width: 465px) {
+  .banner {
+    height: calc( 100vh - 169px);
   }
 }
 /*# sourceMappingURL=all.css.map */

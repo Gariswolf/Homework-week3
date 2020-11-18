@@ -1,0 +1,15 @@
+.banner
+    height: calc( 100vh - 105px )
+    background-image: url(../image/banner.png)
+    .fz-18
+        margin-right: -9px
+
+    @include rwd-md
+        background-image: url(../image/banner-sm.png)
+        .fz-18
+            margin-right: 0
+    @include rwd(610)
+        height: calc( 100vh - 119px )
+        
+    @include rwd(465)
+        height: calc( 100vh - 169px )
