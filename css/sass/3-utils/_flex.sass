@@ -22,7 +22,17 @@
     display: flex
     justify-content: center
     align-items: center
+
+.flex-center-right
+    display: flex
+    justify-content: flex-end
+    align-items: center
     
+.flex-col-center-top
+    display: flex
+    flex-direction: column
+    align-items: center
+
 @each $device-key, $device-width in $device-map
     @each $key, $value in $display-map
         .d-#{$key}-#{$device-key}

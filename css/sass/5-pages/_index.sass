@@ -1,0 +1,141 @@
+.banner
+    height: calc( 100vh - 105px )
+    background-image: url(../image/banner.png)
+    .fz-18
+        margin-right: -9px
+
+    @include rwd-md
+        background-image: url(../image/banner-sm.png)
+        .fz-18
+            margin-right: 0
+    @include rwd(610)
+        height: calc( 100vh - 119px )
+        
+    @include rwd(465)
+        height: calc( 100vh - 169px )
+
+.about
+    &__intro
+        max-width: 237px
+    &__icon
+        height: 100px
+
+    @include rwd(1240)
+        &__menu
+            flex-wrap: wrap
+        &__item
+            width: 45%
+            margin-right: 0
+            margin-bottom: 40px
+
+    @include rwd-md
+        &__icon
+            height: 80px
+    
+    @include rwd(540)
+        &__item
+            width: 100%
+
+.classic
+    &__img
+        width: calc( 100% * 635 / 1100 )
+
+    &__tag
+        &--diamond::before, &--sun::before, &--thunder::before
+            content: ''
+            width: 48px
+            height: 48px
+            display: inline-block
+            position: relative
+            top: 4px
+            left: 0
+            margin-right: 8px
+            background: center/contain no-repeat
+        &--diamond::before
+            background-image: url(../image/icon/icon-diamond.svg)
+        &--sun::before
+            background-image: url(../image/icon/icon-sun.svg)
+        &--thunder::before
+            background-image: url(../image/icon/icon-thunder.svg)
+
+    @include rwd(1060)
+        &__tag
+            font-size: 28px
+            &::before
+                width: 32px
+                height: 32px
+        .flex-row-reverse
+            flex-direction: row
+            
+        &__img
+            margin-left: 0
+            margin-right: 28px
+    @include rwd(700)
+        &__item
+            position: relative
+            justify-content: center
+        &__img
+            width: 100%
+            margin-right: 0
+        &__tag
+            position: absolute
+            color: $color-white
+            &--diamond::before
+                background-image: url(../image/icon/icon-diamond-white.svg)
+            &--sun::before
+                background-image: url(../image/icon/icon-sun-white.svg)
+            &--thunder::before
+                background-image: url(../image/icon/icon-thunder-white.svg)
+
+.cooperation
+    background-image: url(../image/bg.png)
+    &__item
+        position: relative
+        width: 47.5%
+    &__img
+        position: relative
+    .bg-transparent
+        position: absolute
+        top: 0
+        left: 0
+
+    @include rwd(540)
+        padding: 32px 15px
+        &__menu
+            flex-wrap: wrap
+        &__item
+            width: 100%
+            margin-bottom: 16px
+
+.recommend
+    &__item
+        width: calc( 100% * 255 / 1110 )
+
+    @include rwd-lg
+        &__item
+            width: 45%
+
+    @include rwd(540)
+        padding: 32px 16px
+        &__item
+            width: 100%
+            margin-bottom: 16px
+
+.contact
+    &__container
+        max-width: 730px
+    &__submit
+        width: 350px
+        height: 54px
+        border: 0px
+
+    @include rwd-md
+        &__container
+            max-width: 450px
+        &__submit
+            width: 210px
+            height: 36px
+    @include rwd-sm
+        &__submit
+            width: 165px
+            

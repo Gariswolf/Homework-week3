@@ -1,4 +1,64 @@
 .footer
-    // @include rwd-lg
-    //     &__icon
-    //         width: 36px
+    &__item
+        &--tel::before, &--mail::before
+            content: ''
+            width: 48px
+            height: 48px
+            display: inline-block
+            position: relative
+            top: 12px
+            left: 0
+            margin-right: 18px
+            background: center/contain no-repeat
+            
+        &--tel::before
+            background-image: url(../image/icon/icon-phone.svg) 
+        &--mail::before
+            background-image: url(../image/icon/icon-mail.svg) 
+    @include rwd-md
+        &__logo
+            display: none
+        &__item
+            &--tel::before, &--mail::before
+                width: 24px
+                height: 24px
+                top: 6px
+                margin-right: 8px
+
+    @include rwd(700)
+        &__menu--policy
+            display: block
+        &__item
+            &--copyright
+                margin-left: 0
+                width: 100%
+            &--policy
+                margin-left: 0
+                text-align: left
+                
+    @include rwd(650)
+        &__nav
+            float: right
+            margin-top: 4px
+            margin-bottom: 0
+        &__menu
+            &--page
+                display: none
+        
+    @include rwd-sm
+        .fz-7-sm
+            position: relative
+        &__logo
+            width: 48px
+            display: inline-block
+            position: absolute
+            right: 0
+            bottom: 0
+
+    @include rwd(320)
+        &__nav
+            float: initial
+            margin-bottom: 8px
+
+            
+
